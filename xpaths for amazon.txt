@@ -1,0 +1,25 @@
+
+XPATH FOR NORMAL PRICE
+//*[@id="buyBoxInner"]/div/div[1]/ul/li[1]/span/span[2]
+//*[@id="price"]/table/tbody/tr[1]/td[2]/span[1]
+//*[@id="priceblock_ourprice"]
+//*[@id="outOfStock"]/div/div[1]/span
+//*[@id="buyNew_noncbb"]/span
+
+XPATHS FOR DISCOUNT PRICE
+//*[@id="buyNewSection"]/h5/div/div[2]/div/span[2]
+//*[@id="priceblock_ourprice"]
+
+XPATHs for ISBNs
+//*[@id="isbn_feature_div"]/div/div[1]/span[2]
+//*[@id="isbn_feature_div"]/div/div[2]/span[2]
+
+//*[@id="productDetailsTable"]/tbody/tr/td/div/ul/li[5]/text()
+//*[@id="productDetailsTable"]/tbody/tr/td/div/ul/li[4]/text()
+
+//b[contains(text(), "ISBN-13")]/../text()
+//b[contains(text(), "ISBN-10")]/../text()
+
+XPATH for author
+//*[@id="bylineInfo"]/span/span[1]/a[1]
+//*[@id="bylineInfo"]/span/a
