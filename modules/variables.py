@@ -1,19 +1,16 @@
 # ─── LIBRARIES ──────────────────────────────────────────────────────────────────
 from random import randint
-
+random_delays = randint(1, 20)
 
 
 # ─── PROGRAM VARIABLES ──────────────────────────────────────────────────────────
 headers = {
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'
           }
-data_path = './data/amazon_data.csv'
-json_path = './data/amazon_data.json'
-random_delays = randint(1, 20)
 
-url_file_path = './sources/books_url.csv'
-number_of_books = 25
-
+input_path = './data/input.csv'
+output_path = './data/output.csv'
+books_to_scrap = 25
 
 
 # ─── XPATH VARIABLES ────────────────────────────────────────────────────────────

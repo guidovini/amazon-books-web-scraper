@@ -4,7 +4,7 @@ import os, os.path
 
 
 # ─── IMPORTS ────────────────────────────────────────────────────────────────────
-from variables import data_path, json_path, fieldnames, url_file_path, number_of_books
+from variables import output_path, fieldnames, input_path, books_to_scrap
 from file_generation import filter_url_batch, read_url_file
 
 
@@ -12,7 +12,7 @@ from file_generation import filter_url_batch, read_url_file
 def read_initial_values():
     print('Running initial validation')
 
-    batch = read_url_file(url_file_path, number_of_books)
+    batch = read_url_file(input_path, books_to_scrap)
     url_batch = filter_url_batch(batch)
 
     ## Filter repeated values from the input
@@ -22,9 +22,9 @@ def read_initial_values():
     ## Find repeated values from the input
     repeated_input_values = filtered_input[filtered_input['STATUS'] > 1]
 
-    if os.path.isfile(data_path): 
+    if os.path.isfile(output_path): 
         print('Scanning database')
-        db = pd.read_csv(data_path, usecols=['ASIN', 'STATUS'])
+        db = pd.read_csv(output_path, usecols=['ASIN', 'STATUS'])
 
         if ~db.empty or (len(db) == 0): 
             print('Database found with ' + str(len(db)) + ' records.')
@@ -77,7 +77,7 @@ def update_status(r_values, r_input_values):
     repeated_values.set_index('ASIN', inplace=True)
     repeated_input_values.set_index('ASIN', inplace=True)
 
-    db = pd.read_csv(data_path)
+    db = pd.read_csv(output_path)
     db.set_index('ASIN', inplace=True)
 
     if len(repeated_input_values) > 0:
@@ -92,8 +92,8 @@ def update_status(r_values, r_input_values):
     nd = nd[~nd.index.duplicated(keep='first')] 
 
     db.update(nd)
-    # db.to_csv(data_path, float_format='%.f')
-    db.to_csv(data_path) 
+    # db.to_csv(output_path, float_format='%.f')
+    db.to_csv(output_path) 
 
 
 def write_csv_file(file_path, extracted_data):
@@ -107,4 +107,4 @@ def write_csv_file(file_path, extracted_data):
 
     df.set_index('ASIN', inplace=True)
     # df.to_csv(file_path, float_format='%.f')
-    df.to_csv(data_path) 
+    df.to_csv(output_path) 

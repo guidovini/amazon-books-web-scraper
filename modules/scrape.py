@@ -47,7 +47,7 @@ def scraping_urls(asin_list):
             if scraped_data:
                 extracted_data.append(scraped_data)
 
-        write_csv_file(data_path, extracted_data)
+        write_csv_file(output_path, extracted_data)
         print('File Saved. Process Complete!')
         
 

@@ -7,7 +7,7 @@ import re
 
 
 # ─── LOCAL MODULES ──────────────────────────────────────────────────────────────
-from variables import url_file_path, number_of_books
+from variables import input_path, books_to_scrap
 
 
 
@@ -22,16 +22,16 @@ regex = re.compile(r"(amazon.|amzn.)(com|co\.uk|ca|de|fr|es|it|cn|co\.jp).*\/(as
 def generate_url_file():
     excel_file = pd.read_excel(excel_file_path)
     df = pd.DataFrame(excel_file)
-    df.to_csv(url_file_path)
+    df.to_csv(input_path)
 
 # generate_url_file()
     
 ## Reads new csv file, grabs the URL column, grabs a certain number of rows, and returns a list. 
-def read_url_file(url_file_path, number_of_books):
-    url_file = pd.read_csv(url_file_path)
+def read_url_file(input_path, books_to_scrap):
+    url_file = pd.read_csv(input_path)
     df = pd.DataFrame(url_file)
     # books_list = df['url'].values.tolist()
-    books_list = df['url'].loc[:number_of_books-1].values.tolist() # Test
+    books_list = df['url'].loc[:books_to_scrap-1].values.tolist() # Test
     return books_list
 
 
