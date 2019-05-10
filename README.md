@@ -9,17 +9,6 @@ This program will scrape books **from a list of Amazon links (spreadsheet)**. It
 - Item availability
 - Original price and sale price
 
-<!-- ## Table of Contents
-- [Usage Example](#usage-example)
-- [Getting Started](#getting-started)
-- [Running the tests](#running-the-tests)
-- [Built With](#built-with)
-- [Contributing](#contributing)
-- [Versioning](#versioning)
-- [Authors](#authors)
-- [License](#license)
-- [Acknowledgements](#acknowledgements) -->
-
 ---
 
 ## Usage Example
@@ -43,12 +32,15 @@ The program can detect if there are repeated books based on its *ASIN number*, t
 
 ## Getting Started
 1. Clone the repo
-`git clone git@github.com:guidosantillan01/amazon-books-web-scraper.git`
+```sh
+git clone git@github.com:guidosantillan01/amazon-books-web-scraper.git
+```
 
 2. Run `modules/main.py` file:
 ```sh
 PYTHON_PATH/python.exe "FOLDER_PATH/amazon-books-web-scraper/modules/main.py"
 ```
+
 Example:
 ```sh
 C:/ProgramData/Anaconda3/python.exe f:/Downloads/amazon-books-web-scraper/modules/main.py
