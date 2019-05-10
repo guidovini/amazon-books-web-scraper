@@ -92,7 +92,7 @@ Please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for details on our code of
 
 
 ## Authors
-- Guido Santillan Arias - [guidosantillan01@gmail.com](guidosantillan01@gmail.com) - [www.guidosantillan.com](www.guidosantillan.com)
+- Guido Santillan Arias - [guidosantillan01@gmail.com](mailto:guidosantillan01@gmail.com) - [www.guidosantillan.com](http://www.guidosantillan.com/)
 
 
 
