@@ -2,10 +2,10 @@
 /.pytest_cache
 /.vscode
 /alt_versions
-.pyc
-/__pycache__
 playground.py
 playground_filtering.py
+/data_backups
+*.xlsm
 
 
 # Created by https://www.gitignore.io/api/python
