@@ -7,7 +7,7 @@ import re
 
 
 # ─── LOCAL MODULES ──────────────────────────────────────────────────────────────
-from variables import input_path, books_to_scrap
+from variables import input_path, books_to_scrape
 
 
 
@@ -26,18 +26,18 @@ def generate_url_file():
 
 # generate_url_file()
     
-## Reads new csv file, grabs the URL column, grabs a certain number of rows, and returns a list. 
-def read_url_file(input_path, books_to_scrap):
+## Reads the input csv file, grabs the URL column, grabs a certain number of rows (variable: books_to_scrape), and returns a list. 
+def read_input_file(input_path, books_to_scrape):
     url_file = pd.read_csv(input_path)
     df = pd.DataFrame(url_file)
     # books_list = df['url'].values.tolist()
-    books_list = df['url'].loc[:books_to_scrap-1].values.tolist() # Test
+    books_list = df['url'].loc[:books_to_scrape-1].values.tolist() # Test
     return books_list
 
 
-## Reads list from read_url_file(), filters ASIN from it, and returns a list of ASIN.
+## Reads book list from read_input_file(), filters ASIN from it, and returns a list of ASIN.
 ## batch is a list of amazon urls, e.g. ['www.amazon.com/dp/XW2X2X/','',...]
-def filter_url_batch(batch):
+def filter_asin_from_url_list(batch):
     data = []
 
     for url in batch:

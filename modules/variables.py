@@ -10,7 +10,7 @@ headers = {
 
 input_path = './data/input.csv'
 output_path = './data/output.csv'
-books_to_scrap = 25
+books_to_scrape = 35
 
 
 # ─── XPATH VARIABLES ────────────────────────────────────────────────────────────

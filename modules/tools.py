@@ -4,19 +4,19 @@ import os, os.path
 
 
 # ─── IMPORTS ────────────────────────────────────────────────────────────────────
-from variables import output_path, fieldnames, input_path, books_to_scrap
-from file_generation import filter_url_batch, read_url_file
+from variables import output_path, fieldnames, input_path, books_to_scrape
+from file_generation import filter_asin_from_url_list, read_input_file
 
 
 # ─── PROGRAM ────────────────────────────────────────────────────────────────────
 def read_initial_values():
     print('Running initial validation')
 
-    batch = read_url_file(input_path, books_to_scrap)
-    url_batch = filter_url_batch(batch)
+    url_list = read_input_file(input_path, books_to_scrape)
+    asin_list = filter_asin_from_url_list(url_list)
 
     ## Filter repeated values from the input
-    input_df = pd.DataFrame(url_batch, columns=['ASIN'])
+    input_df = pd.DataFrame(asin_list, columns=['ASIN'])
     filtered_input = input_df.groupby('ASIN').size().reset_index(name='STATUS')
 
     ## Find repeated values from the input

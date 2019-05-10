@@ -23,6 +23,7 @@ from filtering import filter_values
 
 # ─── PROGRAM ────────────────────────────────────────────────────────────────────
 
+## Check if 
 def initial_validation():
     print('------SCRAPING URLs------')
     asin_df, repeated_values, repeated_input_values = read_initial_values()
