@@ -42,26 +42,31 @@ The program can detect if there are repeated books based on its *ASIN number*, t
 
 
 ## Getting Started
-### Prerequisites
-- You will need Python
+1. Clone the repo
+`git clone git@github.com:guidosantillan01/amazon-books-web-scraper.git`
 
-> **IMPORTANT:** To scrape your own Amazon links you have to create a .csv file **with a column header of url** and place it inside the `data` folder with the name of `input.csv`
-
-### Installing
-
-
-### Running
-Run the command line:
+2. Run `modules/main.py` file:
 ```sh
-PYTHON_PATH/python.exe "FOLDER_PATH/python-web-scrapper/modules/main.py"
+PYTHON_PATH/python.exe "FOLDER_PATH/amazon-books-web-scraper/modules/main.py"
+```
+Example:
+```sh
+C:/ProgramData/Anaconda3/python.exe f:/Downloads/amazon-books-web-scraper/modules/main.py
 ```
 
-<!-- ## Running the tests -->
 
-<!-- 
-## Development setup
+### Prerequisites
+- You will need Python. The [Anaconda Distribution](https://www.anaconda.com/distribution/) is recommended.
+- Install the VSCode Python extension.
+- Install these python libraries:
+```sh
+pip3 install pandas certifi urllib3
+```
+- pandas 0.23.4 or greater is required, if you have an older version of pandas upgrade it with:
+```sh
+pip3 install --upgrade pandas
+```
 
-## Deployment -->
 
 ## Important Considerations
 - Check out *variables.py* file to modify the desired behavior of the program such as:
@@ -71,23 +76,25 @@ PYTHON_PATH/python.exe "FOLDER_PATH/python-web-scrapper/modules/main.py"
 - [Useful web scraping resources](./docs/USEFUL_RESOURCES.md)
 - [XPATHS for web scraping Amazon](./docs/xpaths_for_amazon.txt)
 
+
+
 ## Built With
 - Python 3.7
-- Pandas
+- Pandas 0.23.4
+- certifi 2018.8.24
+- urllib3 1.23
 
-<!-- ## Versioning -->
 
-<!-- ## Release History -->
 
 ## Contributing
 Please read [CONTRIBUTING.md](./docs/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
+
+
 ## Authors
 - Guido Santillan Arias - [guidosantillan01@gmail.com](guidosantillan01@gmail.com) - [www.guidosantillan.com](www.guidosantillan.com)
 
+
+
 ## Licence
 This project is licensed under the **MIT license** - see the [LICENSE](./LICENSE.txt) file for details.
-
-<!-- ## Acknowledgements
-- abc
-- abc -->
